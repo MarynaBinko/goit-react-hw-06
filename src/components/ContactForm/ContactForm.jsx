@@ -3,6 +3,8 @@ import { nanoid } from 'nanoid';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { addContact } from '../../redux/contactsSlice';
+import styles from "./ContactForm.module.css"
+
 
 const ContactForm = () => {
   const dispatch = useDispatch();
@@ -24,18 +26,18 @@ const ContactForm = () => {
 
   return (
     <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={validationSchema}>
-      <Form>
+      <Form className={styles.form}>
         <div>
           <label>Name</label>
-          <Field type="text" name="name" />
+          <Field type="text" name="name" className={styles.field}/>
           <ErrorMessage name="name" component="div" />
         </div>
         <div>
           <label>Number</label>
-          <Field type="text" name="number" />
+          <Field type="text" name="number" className={styles.field} />
           <ErrorMessage name="number" component="div" />
         </div>
-        <button type="submit">Add contact</button>
+        <button type="submit" className={styles.btn}>Add contact</button>
       </Form>
     </Formik>
   );

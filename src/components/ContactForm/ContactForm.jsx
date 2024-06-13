@@ -8,7 +8,7 @@ import styles from "./ContactForm.module.css"
 
 const ContactForm = () => {
   const dispatch = useDispatch();
-
+  
   const initialValues = {
     name: '',
     number: ''
